@@ -1,0 +1,8 @@
+.idea/
+.pycache/
+external_libs/
+pretrained_model/
+data/
+output/
+corpus/
+examples/
