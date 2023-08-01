@@ -2,7 +2,7 @@
     "workbench.colorTheme": "Default Dark+",
     "files.autoSave":"onFocusChange",
     "#terminal.integrated.defaultProfile.windows#": "C:\\Windows\\System32\\cmd.exe",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 2,
     "autoDocstring.docstringFormat": "google-notypes",
     "workbench.settings.editor": "json",
     "workbench.iconTheme": "vscode-icons",
