@@ -15,7 +15,7 @@ native mobile apps: js + react/ionic
 native desktop apps: js + electron 
 
 ES5 -> ES6(ES2015) -> ...
- 
+
 git
 basics:
 alert("hello world!")

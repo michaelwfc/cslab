@@ -5,15 +5,55 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.tutorial.Main",
+            "projectName": "web-servlet-hello"
+        },
+        {
+            "type": "java",
+            "name": "Hello",
+            "request": "launch",
+            "mainClass": "src.com.java.tutorial.Hello",
+            "projectName": "cslab_e9d61c44"
+        },
+        {
+            "type": "java",
+            "name": "Server",
+            "request": "launch",
+            "mainClass": "src.com.web.server.Server",
+            "projectName": "cslab_e9d61c44"
+        },
+        {
+            "type": "java",
+            "name": "Hello",
+            "request": "launch",
+            "mainClass": "src.java_tutorial.Hello",
+            "projectName": "cslab_e9d61c44"
+        },
+        {
+            "type": "java",
+            "name": "Hello",
+            "request": "launch",
+            "mainClass": "src.Hello",
+            "projectName": "cslab_e9d61c44"
+        },
+        {
+            "type": "java",
+            "name": "Hello",
+            "request": "launch",
+            "mainClass": "tutorials.java_tutorial.Hello",
+            "projectName": "cslab_e9d61c44"
+        },
+        {
             "name": "Launch Hello world",
             "type": "node",
             "program": "${workspaceFolder}/tutorials/js_tutorial/helloWorldServer/index.js",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"
-            ],
-           
-        },
-
+            ]
+        }
     ]
 }
