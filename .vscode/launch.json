@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "com.Main",
+            "projectName": "web-servlet-hello"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "com.servlet.Main",
             "projectName": "web-servlet-hello"
         },
