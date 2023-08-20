@@ -3,6 +3,10 @@
  */
 package com.tutorial;
 
+import java.lang.reflect.Field;
+
+import com.annotations.Range;
+
 public class Hello {
     public static void main(String[] args) {
         System.out.println("Hello Java!");
@@ -24,7 +28,22 @@ public class Hello {
         Student wen = new Student("wen", 3, 90);
         System.out.println("student score is " + wen.score);
         wen.run();
-    };
+
+        printClassInfo(int.class);
+        printClassInfo("abc".getClass());
+        printClassInfo(String[].class);
+
+        Person longName = new Person("my name is michale jackson", 80);
+        System.out.println(longName);
+
+        try {
+            check(longName);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Person " + longName + " check failed");
+        } catch (ReflectiveOperationException e) {
+            System.out.println("ReflectiveOperationException");
+        }
+    }
 
     public static void printVariable() {
         int x = 5;
@@ -101,4 +120,42 @@ public class Hello {
 
         return response;
     }
+
+    static void printClassInfo(Class cls) {
+        System.out.println("Class name: " + cls.getName());
+        System.out.println("Simple name: " + cls.getSimpleName());
+        if (cls.getPackage() != null) {
+            System.out.println("Package name: " + cls.getPackage().getName());
+        }
+        System.out.println("is interface: " + cls.isInterface());
+        System.out.println("is enum: " + cls.isEnum());
+        System.out.println("is array: " + cls.isArray());
+        System.out.println("is primitive: " + cls.isPrimitive());
+    }
+
+    static void check(Person person) throws IllegalArgumentException, ReflectiveOperationException {
+        // 遍历所有Field:
+        for (Field field : person.getClass().getDeclaredFields()) {
+            // 获取Field定义的@Range:
+            Range range = field.getAnnotation(Range.class);
+            // 如果@Range存在:
+            if (range != null) {
+                // 获取Field的值:
+                Object value = field.get(person);
+                // 如果值是String:
+                if (value instanceof String s) {
+                    // 判断值是否满足@Range的min/max:
+                    if (s.length() < range.min() || s.length() > range.max()) {
+                        throw new IllegalArgumentException("Invalid field: " + field.getName());
+                    }
+                } else if (value instanceof Integer i) {
+                    if (i < 0 || i > 100) {
+                        throw new IllegalArgumentException("Invalid field: " + field.getName());
+                    }
+
+                }
+            }
+        }
+    }
+
 }

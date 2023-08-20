@@ -1,5 +1,7 @@
 package com.tutorial;
 
+import com.annotations.Range;
+
 /**
  * java class
  */
@@ -21,7 +23,10 @@ abstract class Human implements HumanInterface {
 class Person extends Human {
     // 把field从public改成private，外部代码不能访问这些field
     // 为了让子类可以访问父类的字段，我们需要把private改为protected。用protected修饰的字段可以被子类访问：
+    @Range(min = 1, max = 10)
     protected String name;
+
+    @Range(min = 1, max = 100)
     protected int age;
 
     // 创建实例的时候，实际上是通过构造方法来初始化实例的。
