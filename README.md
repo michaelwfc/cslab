@@ -2,7 +2,7 @@
 
 This repository is for cs learning and implementation
 
-# jave devolop in vscode
+# java devolop in vscode
 
 ## install
 
@@ -30,8 +30,21 @@ This repository is for cs learning and implementation
 - run Hello class
   java -classpath ./bin src.com.tutorial.Hello
 
-## mvn command
+## build jar with mvn command
+
+- setting pom.xml to package a .jar
+
+  set groupId + artifactId + packaging + version
+  set build : plugin: maven-shade-plugin + mainClass
+  set dependencies:
 
 - mvn clean package
-  use pom.xml to package a .jar
 - java -jar target/hello.jar
+
+## build war with mvn command
+
+- 编写 Servlet
+- 打包为 war 文件 setting pom.xml and mvn clean package : web-servlet.war
+- 复制到 Tomcat 的 webapps 目录下: put .war in tomcat/webapps
+- 启动 Tomcat : startup.bat
+- open :http://localhost:8080/web-servlet/hello

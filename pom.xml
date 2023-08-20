@@ -5,7 +5,7 @@
     <groupId>com.michael.learnjava</groupId>
     <!-- <artifactId>hello-world</artifactId> -->
     <artifactId>web-servlet</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <version>1.0</version>
 
     <properties>
@@ -17,7 +17,7 @@
     </properties>
 
     <build>
-        <plugins>
+        <!-- <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -32,7 +32,7 @@
                             <transformers>
                                 <transformer
                                     implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <!-- <mainClass>com.tutorial.Hello</mainClass> -->
+                                    <mainClass>com.tutorial.Hello</mainClass> 
                                     <mainClass>com.web.Server</mainClass>
                                 </transformer>
                             </transformers>
@@ -40,7 +40,9 @@
                     </execution>
                 </executions>
             </plugin>
-        </plugins>
+        </plugins> -->
+        <finalName>web-servlet</finalName>
+
     </build>
 
 
@@ -50,6 +52,7 @@
             <artifactId>jakarta.servlet-api</artifactId>
             <version>6.0.0</version>
             <scope>provided</scope>
+            <!-- 注意到<scope>指定为provided，表示编译时使用，但不会打包到.war文件中，因为运行期Web服务器本身已经提供了Servlet API相关的jar包。 -->
         </dependency>
 
         <dependency>
@@ -65,5 +68,20 @@
             <version>8.0.33</version>
             <scope>runtime</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-core</artifactId>
+            <version>10.1.12</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <version>10.1.12</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 </project>
