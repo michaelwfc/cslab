@@ -3,15 +3,21 @@
  */
 package com.tutorial;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 import com.annotations.Range;
 
 public class Hello {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println("Hello Java!");
         printVariable();
         printArray();
+
+        printGenericType();
 
         String response = getPass(85);
         System.out.println(response);
@@ -35,6 +41,8 @@ public class Hello {
 
         Person longName = new Person("my name is michale jackson", 80);
         System.out.println(longName);
+
+        printReflection();
 
         try {
             check(longName);
@@ -97,15 +105,25 @@ public class Hello {
     public static void printArray() {
         int[] ns = new int[5];
         ns[0] = 10;
-        System.out.println("ns is " + ns.toString());
+        System.out.println("ns is " + Arrays.toString(ns));
         System.out.println("ns length is " + ns.length);
 
         int[] ns2 = new int[] { 68, 79, 91, 85, 62 };
         // int[] ns2 = { 68, 79, 91, 85, 62 };
-        System.out.println("ns2 is " + ns2.toString());
+        System.out.println("ns2 is " + Arrays.toString(ns2));
 
         String[] names = { "michale", "tracy", "grace" };
-        System.out.println(names);
+        System.out.println("String Array:" + Arrays.toString(names));
+    }
+
+    public static void printGenericType() {
+        ArrayList<String> stringArray = new ArrayList<String>();
+        stringArray.add("a");
+        stringArray.add("b");
+        for (String s : stringArray) {
+            System.out.println("stringArray:" + s);
+        }
+
     }
 
     public static String getPass(int score) {
@@ -121,7 +139,35 @@ public class Hello {
         return response;
     }
 
+    static void printReflection() throws NoSuchFieldException, IllegalAccessException,
+            NoSuchMethodException, InvocationTargetException {
+        // 反射是为了解决在运行期，对某个实例一无所知的情况下，如何调用其方法
+        // 通过Class实例获取class信息的方法称为反射（Reflection）
+        Class cls = String.class;
+        System.out.println("String.class name is:" + cls.getName());
+
+        Class stringListCls = String[].class;
+        System.out.println("String[].class name is:" + stringListCls.getName());
+
+        Person person = new Person("michael", 10);
+
+        Class personCls = person.getClass();
+
+        Field namField = personCls.getDeclaredField("name");
+        Object name = namField.get(person);
+        System.out.println("name get by namField: " + name);
+
+        // 获取方法
+        Method setName = personCls.getDeclaredMethod("setName", String.class);
+        setName.invoke(person, "Andy");
+        System.out.println("new name set by  setName: " + person);
+    }
+
     static void printClassInfo(Class cls) {
+
+        // 每加载一种class，JVM就为其创建一个Class类型的实例，并关联起来
+        // JVM持有的每个Class实例都指向一个数据类型（class或interface）
+
         System.out.println("Class name: " + cls.getName());
         System.out.println("Simple name: " + cls.getSimpleName());
         if (cls.getPackage() != null) {
