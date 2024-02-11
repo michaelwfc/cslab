@@ -1,11 +1,10 @@
 { 
     "workbench.colorTheme": "Default Dark+",
     "files.autoSave":"onFocusChange",
-    "#terminal.integrated.defaultProfile.windows#": "C:\\Windows\\System32\\cmd.exe",
+    "terminal.integrated.defaultProfile.windows": "Ubuntu-22.04 (WSL)",
     "window.zoomLevel": 2,
     "autoDocstring.docstringFormat": "google-notypes",
     "workbench.settings.editor": "json",
-    "workbench.iconTheme": "vscode-icons",
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,  
     "python.formatting.provider": "yapf",
@@ -27,7 +26,11 @@
         "default":  true
        },
     ],
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "files.associations": {
+      "string.h": "c",
+      "stdio.h": "c"
+    }
 
     
 }
