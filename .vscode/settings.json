@@ -1,7 +1,8 @@
 { 
     "workbench.colorTheme": "Default Dark+",
     "files.autoSave":"onFocusChange",
-    "terminal.integrated.defaultProfile.windows": "Ubuntu-22.04 (WSL)",
+    // "terminal.integrated.defaultProfile.windows": "Ubuntu-22.04 (WSL)",
+
     "window.zoomLevel": 2,
     "autoDocstring.docstringFormat": "google-notypes",
     "workbench.settings.editor": "json",
@@ -17,16 +18,18 @@
     },
     "vsicons.dontShowNewVersionMessage": true,
 
-    "java.configuration.runtimes": [
-      {
-        "name": "JavaSE-20",
-        "path": "C:\\Program Files\\Java\\jdk-20",
-        "sources" : "C:\\Program Files\\Java\\jdk-20\\lib\\src.zip",
-        "javadoc" : "https://docs.oracle.com/en/java/javase/20/docs/api",
-        "default":  true
-       },
-    ],
-    "java.configuration.updateBuildConfiguration": "interactive",
+    // "java.configuration.runtimes": [
+    //   {
+    //     "name": "JavaSE-20",
+    //     "path": "C:\\Program Files\\Java\\jdk-20",
+    //     "sources" : "C:\\Program Files\\Java\\jdk-20\\lib\\src.zip",
+    //     "javadoc" : "https://docs.oracle.com/en/java/javase/20/docs/api",
+    //     "default":  true
+    //    },
+    // ],
+    // "java.configuration.updateBuildConfiguration": "interactive",
+
+
     "files.associations": {
       "string.h": "c",
       "stdio.h": "c"

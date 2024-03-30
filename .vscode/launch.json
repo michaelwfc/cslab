@@ -1,87 +1,110 @@
 {
-    // 使用 IntelliSense 了解相关属性。 
-    // 悬停以查看现有属性的描述。
-    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        // {
+        //     "type": "java",
+        //     "name": "Main",
+        //     "request": "launch",
+        //     "mainClass": "com.Main",
+        //     "projectName": "web-servlet-hello"
+        // },
+        // {
+        //     "type": "java",
+        //     "name": "Main",
+        //     "request": "launch",
+        //     "mainClass": "com.servlet.Main",
+        //     "projectName": "web-servlet-hello"
+        // },
+        // {
+        //     "type": "java",
+        //     "name": "Main",
+        //     "request": "launch",
+        //     "mainClass": "com.webapp.Main",
+        //     "projectName": "web-servlet-hello"
+        // },
+        // {
+        //     "type": "java",
+        //     "name": "Hello",
+        //     "request": "launch",
+        //     "mainClass": "com.tutorial.Hello",
+        //     "projectName": "web-servlet-hello"
+        // },
+        // {
+        //     "type": "java",
+        //     "name": "Main",
+        //     "request": "launch",
+        //     "mainClass": "com.tutorial.Main",
+        //     "projectName": "web-servlet-hello"
+        // },
+        // {
+        //     "type": "java",
+        //     "name": "Hello",
+        //     "request": "launch",
+        //     "mainClass": "src.com.java.tutorial.Hello",
+        //     "projectName": "cslab_e9d61c44"
+        // },
+        // {
+        //     "type": "java",
+        //     "name": "Server",
+        //     "request": "launch",
+        //     "mainClass": "src.com.web.server.Server",
+        //     "projectName": "cslab_e9d61c44"
+        // },
+        // {
+        //     "type": "java",
+        //     "name": "Hello",
+        //     "request": "launch",
+        //     "mainClass": "src.java_tutorial.Hello",
+        //     "projectName": "cslab_e9d61c44"
+        // },
+        // {
+        //     "type": "java",
+        //     "name": "Hello",
+        //     "request": "launch",
+        //     "mainClass": "src.Hello",
+        //     "projectName": "cslab_e9d61c44"
+        // },
+        // {
+        //     "type": "java",
+        //     "name": "Hello",
+        //     "request": "launch",
+        //     "mainClass": "tutorials.java_tutorial.Hello",
+        //     "projectName": "cslab_e9d61c44"
+        // },
+        // {
+        //     "name": "Launch Hello world",
+        //     "type": "node",
+        //     "program": "${workspaceFolder}/tutorials/js_tutorial/helloWorldServer/index.js",
+        //     "request": "launch",
+        //     "skipFiles": [
+        //         "<node_internals>/**"
+        //     ]
+        // },
         {
-            "type": "java",
-            "name": "Main",
+            "name": "C/C++: gcc.exe build and debug active file",
+            "type": "cppdbg",
             "request": "launch",
-            "mainClass": "com.Main",
-            "projectName": "web-servlet-hello"
-        },
-        {
-            "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "com.servlet.Main",
-            "projectName": "web-servlet-hello"
-        },
-        {
-            "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "com.webapp.Main",
-            "projectName": "web-servlet-hello"
-        },
-        {
-            "type": "java",
-            "name": "Hello",
-            "request": "launch",
-            "mainClass": "com.tutorial.Hello",
-            "projectName": "web-servlet-hello"
-        },
-        {
-            "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "com.tutorial.Main",
-            "projectName": "web-servlet-hello"
-        },
-        {
-            "type": "java",
-            "name": "Hello",
-            "request": "launch",
-            "mainClass": "src.com.java.tutorial.Hello",
-            "projectName": "cslab_e9d61c44"
-        },
-        {
-            "type": "java",
-            "name": "Server",
-            "request": "launch",
-            "mainClass": "src.com.web.server.Server",
-            "projectName": "cslab_e9d61c44"
-        },
-        {
-            "type": "java",
-            "name": "Hello",
-            "request": "launch",
-            "mainClass": "src.java_tutorial.Hello",
-            "projectName": "cslab_e9d61c44"
-        },
-        {
-            "type": "java",
-            "name": "Hello",
-            "request": "launch",
-            "mainClass": "src.Hello",
-            "projectName": "cslab_e9d61c44"
-        },
-        {
-            "type": "java",
-            "name": "Hello",
-            "request": "launch",
-            "mainClass": "tutorials.java_tutorial.Hello",
-            "projectName": "cslab_e9d61c44"
-        },
-        {
-            "name": "Launch Hello world",
-            "type": "node",
-            "program": "${workspaceFolder}/tutorials/js_tutorial/helloWorldServer/index.js",
-            "request": "launch",
-            "skipFiles": [
-                "<node_internals>/**"
-            ]
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: gcc.exe build active file"
         }
     ]
 }

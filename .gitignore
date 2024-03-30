@@ -9,3 +9,6 @@ examples/
 bin/
 target/
 tomcat.*/
+# ignore the python venv
+env/
+pyenv/
